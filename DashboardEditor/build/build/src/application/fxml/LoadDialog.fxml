@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LoadDialogController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="41.0" prefWidth="296.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="134.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="67.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="94.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="19.0" text="Current Version : " />
+                        <Label fx:id="versionLabel" style="-fx-text-fill: #015f66;" text="Label" textFill="#22364e" GridPane.columnIndex="1" />
+                        <JFXButton fx:id="change" buttonType="RAISED" onAction="#handleChange" prefHeight="29.0" prefWidth="77.0" text="Change" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="479.0" prefWidth="700.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="423.0" prefWidth="700.0" style="-fx-background-color: white;">
+                     <children>
+                        <ListView fx:id="dashboardListView" prefHeight="200.0" prefWidth="200.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="390.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fx:id="addIV" fitHeight="56.0" fitWidth="60.0" onMouseClicked="#handleAdd" pickOnBounds="true" preserveRatio="true" styleClass="arrow">
+                                       <image>
+                                          <Image url="@../../../img/arr.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <ImageView fx:id="removeIV" fitHeight="55.0" fitWidth="61.0" onMouseClicked="#handleRemove" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../img/arr2.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <ListView fx:id="selectedListView" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <AnchorPane prefHeight="66.0" prefWidth="700.0" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="700.0" style="-fx-border-color: #22364e white white white; -fx-border-width: 2;">
+               <children>
+                  <JFXButton fx:id="load" buttonType="RAISED" onAction="#handleLoad" text="DownLoad" textFill="#015f66">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="cancle" buttonType="RAISED" onAction="#handleCancel" text="Cancel">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
