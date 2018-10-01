@@ -61,6 +61,7 @@ public class DatabaseOptionDialogController {
 			JSONObject jsonObject = (JSONObject) obj;
 			urlTextField.setText((String)jsonObject.get("url"));
 			userTextField.setText((String)jsonObject.get("user"));
+			passwordTextField.setText((String)jsonObject.get("pass"));
         } catch (Exception e) {
         	e.printStackTrace();
 		}

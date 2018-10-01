@@ -908,7 +908,11 @@ public class RootLayoutController {
 			AnchorPane dialog = (AnchorPane) loader.load();
 
 			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Connection");
+			if (main.isDbConnect)
+				dialogStage.setTitle("Connection");
+			else
+				dialogStage.setTitle("Connection - Database not connected");
+			
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(main.getPrimaryStage());
 			Scene scene = new Scene(dialog);
