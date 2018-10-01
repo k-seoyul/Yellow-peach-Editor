@@ -234,6 +234,7 @@ public class Connect {
 		} finally {
 			pool.freeConnection(conn, pstmt, rs);
 		}
+		//System.out.println(ctrTopic);
 		return ctrTopic;
 	}
 
@@ -353,34 +354,6 @@ public class Connect {
 			e.printStackTrace();
 		} finally {
 			pool.freeConnection(conn, pstmt);
-		}
-		return result;
-	}
-	public boolean isConnect() {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		boolean result = false;
-
-		try {
-			if(pool.getConnection() != null)
-				conn = pool.getConnection();
-			else
-				result = false;
-			String sql = "select * from topicList";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			if (rs.next())
-				result = true;
-			else
-				result = false;
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			pool.freeConnection(conn, pstmt, rs);
 		}
 		return result;
 	}

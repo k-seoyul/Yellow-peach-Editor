@@ -90,7 +90,8 @@ public class Main extends Application {
 		this.primaryStage.getIcons().add(new Image("file:resources/images/mars.png"));
 		
 		connect = new Connect();
-		if(isDbConnect = checkDBConnect()) {
+		isDbConnect = checkDBConnect();
+		if(isDbConnect) {
 			topicList = connect.getTopicList();
 			topicListSeparator();
 		}
@@ -307,6 +308,8 @@ public class Main extends Application {
 	// json 데이터로 변환
 	private void toJson(HashMap<String, List<Chart>> dashBoardHashMap, String tabId, File file) {
 		System.out.println("converting start");
+		
+		// 차트 순서  설정
 		setChartNumber();
 		
 		JSONObject obj = new JSONObject();
@@ -377,9 +380,11 @@ public class Main extends Application {
 			connect.getPool().set_user(user);
 			connect.getPool().set_password(pass);
 			
+			System.out.println(connect.getPool().get_url());
+			
 			try {
 				if(connect.getPool().createConnection() != null) {
-					//System.out.println("connect");
+					System.out.println("connect");
 					isDbConnect = true;
 					topicList = connect.getTopicList();
 					topicListSeparator();

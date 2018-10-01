@@ -30,6 +30,8 @@ import java.sql.Statement;
 import java.util.Properties;
 import java.util.Vector;
 
+import application.Main;
+
 
 public class PoolManager {
 
@@ -42,7 +44,12 @@ public class PoolManager {
      *  "1234"
      */
     private String _driver = "com.mysql.jdbc.Driver";
-    private static String _url, _user, _password;
+    /*
+    private String _url = "jdbc:mysql://113.198.86.190:3306/yellowpeach2?useSSL=false";
+    private String _user = "root";
+    private String _password = "1234";
+    */
+    private String _url, _user, _password;
     
     private boolean _traceOn = false;
     private boolean initialized = false;
@@ -50,7 +57,7 @@ public class PoolManager {
     private static PoolManager instance = null;
 
     public PoolManager() {
-
+    	
     }
 
     public String get_url() {
@@ -286,9 +293,12 @@ public class PoolManager {
             props.put("password", _password);
             
             con = DriverManager.getConnection(_url, props);
-        } catch (Throwable t) {
-            throw new SQLException(t.getMessage());
-        }
+            Main.isDbConnect = true;
+        } catch (Exception e) {
+			System.out.println("연결실패");
+			Main.isDbConnect = false;
+			//con.close();
+		}
         return con;
     }
 

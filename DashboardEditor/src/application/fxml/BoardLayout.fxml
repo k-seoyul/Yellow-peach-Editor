@@ -90,6 +90,8 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </FlowPane.margin>
                                                       </BorderPane>
+                                                      
+                                                      <!-- 
                                                       <BorderPane style="-fx-background-color: white;">
                                                          <center>
                                                             <ImageView id="histogram" fx:id="histogramIV" fitHeight="39.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
@@ -109,6 +111,8 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </FlowPane.margin>
                                                       </BorderPane>
+                                                       -->
+                                                      
                                                       <BorderPane style="-fx-background-color: white;">
                                                          <center>
                                                             <ImageView id="line" fx:id="lineIV" fitHeight="44.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">

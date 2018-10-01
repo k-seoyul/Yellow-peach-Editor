@@ -50,7 +50,7 @@
                                  <children>
                                     <ImageView fx:id="addIV" fitHeight="56.0" fitWidth="60.0" onMouseClicked="#handleAdd" pickOnBounds="true" preserveRatio="true" styleClass="arrow">
                                        <image>
-                                          <Image url="@../../../img/arr.png" />
+                                          <Image url="@../../../resources/images/arr.png" />
                                        </image>
                                        <VBox.margin>
                                           <Insets bottom="5.0" />
@@ -58,7 +58,7 @@
                                     </ImageView>
                                     <ImageView fx:id="removeIV" fitHeight="55.0" fitWidth="61.0" onMouseClicked="#handleRemove" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../img/arr2.png" />
+                                          <Image url="@../../../resources/images/arr2.png" />
                                        </image>
                                        <VBox.margin>
                                           <Insets top="5.0" />
@@ -79,7 +79,7 @@
             </VBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="700.0" style="-fx-border-color: #22364e white white white; -fx-border-width: 2;">
                <children>
-                  <JFXButton fx:id="load" buttonType="RAISED" onAction="#handleLoad" text="DownLoad" textFill="#015f66">
+                  <JFXButton fx:id="load" buttonType="RAISED" onAction="#handleLoad" text="Download" textFill="#015f66">
                      <HBox.margin>
                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </HBox.margin>

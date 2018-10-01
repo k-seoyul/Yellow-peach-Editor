@@ -49,7 +49,7 @@
                         </JFXButton>
                      </children>
                   </FlowPane>
-                  <JFXButton fx:id="addDashBoard" alignment="CENTER" buttonType="RAISED" mnemonicParsing="false" onMouseClicked="#handleAddDashBoard" prefHeight="35.0" style="-fx-background-color: white;" styleClass="menu" text="Add DashBoard" textFill="#363948" />
+                  <JFXButton fx:id="addDashBoard" alignment="CENTER" buttonType="RAISED" mnemonicParsing="false" onMouseClicked="#handleAddDashBoard" prefHeight="35.0" style="-fx-background-color: white;" styleClass="menu" text="Add Dashboard" textFill="#363948" />
                </children>
             </GridPane>
          </bottom>

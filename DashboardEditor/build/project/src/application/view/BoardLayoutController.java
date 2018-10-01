@@ -52,7 +52,7 @@ public class BoardLayoutController {
 	@FXML private VBox firstSubMenuList;
 	@FXML private FlowPane firstMenu;
 	@FXML private ImageView barIV;
-	@FXML private ImageView histogramIV;
+	//@FXML private ImageView histogramIV;
 	@FXML private ImageView lineIV;
 	@FXML private ImageView gaugeIV;
 	@FXML private ImageView doughnutIV;
@@ -83,7 +83,7 @@ public class BoardLayoutController {
 	private String typeId;
 
 	public void setSize(double primaryWidth, double primaryHeight) {
-		menuRootPane.setPrefSize(primaryWidth*0.17, primaryHeight*0.92);
+		menuRootPane.setPrefSize(primaryWidth*0.15, primaryHeight*0.92);
 		menuRootPane.setMaxSize(menuRootPane.getPrefWidth(), menuRootPane.getPrefHeight());
 		menuRootPane.setMinSize(menuRootPane.getPrefWidth(), 600);
 		
@@ -106,7 +106,8 @@ public class BoardLayoutController {
 		vBox.setStyle("-fx-background-color:#22364e;");
 		
 		for (int i = 0; i < imageVector.size(); i++) {
-			imageVector.get(i).setFitWidth(vBox.getPrefWidth()*0.38);
+			//imageVector.get(i).setFitWidth(vBox.getPrefWidth()*0.40);
+			imageVector.get(i).setFitWidth(menuRootPane.getPrefWidth()*0.35);
 			imageVector.get(i).setFitHeight(80);
 		}
 	}
@@ -216,7 +217,7 @@ public class BoardLayoutController {
 		widgetIV.setImage(new Image("file:resources/images/widget.png"));
 		
 		barIV.setImage(new Image("file:resources/images/Bar.png"));
-		histogramIV.setImage(new Image("file:resources/images/Histogram.png"));
+		//histogramIV.setImage(new Image("file:resources/images/Histogram.png"));
 		lineIV.setImage(new Image("file:resources/images/Line.png"));
 		gaugeIV.setImage(new Image("file:resources/images/Gauge.png"));
 		doughnutIV.setImage(new Image("file:resources/images/Doughnut.png"));
@@ -231,7 +232,7 @@ public class BoardLayoutController {
 		
 		// 이미지들을 벡터에 넣어준다
 		imageVector.add(barIV);
-		imageVector.add(histogramIV);
+		//imageVector.add(histogramIV);
 		imageVector.add(lineIV);
 		imageVector.add(gaugeIV);
 		imageVector.add(doughnutIV);

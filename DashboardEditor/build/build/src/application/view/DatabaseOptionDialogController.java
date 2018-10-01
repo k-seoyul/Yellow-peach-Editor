@@ -160,27 +160,30 @@ public class DatabaseOptionDialogController {
 				e.printStackTrace();
 			}
 			
+			// 다시 연결시도해준다
 			main.checkDBConnect();
 		}else {
-			for (int i = 0; i < topicList.size(); i++) {
-				if(controlTopicList.get(i).equals("null"))
-					controlTopicList.set(i, null);
-				if(!main.connect.insertTopic(topicList.get(i), controlTopicList.get(i))) {
-					Alert alert = new Alert(AlertType.ERROR);
-			        alert.setTitle("ERROR");
-			        alert.setHeaderText("");
-			        alert.setContentText("데이터베이스에 토픽이 저장되지못했습니다.");
-			        alert.showAndWait();
-			        topicTextField.setText("");
-					controlTopicTextField.setText("");
-			        return;
+			if(topicList.size() > 0) {
+				for (int i = 0; i < topicList.size(); i++) {
+					if(controlTopicList.get(i).equals("null"))
+						controlTopicList.set(i, null);
+					if(!main.connect.insertTopic(topicList.get(i), controlTopicList.get(i))) {
+						Alert alert = new Alert(AlertType.ERROR);
+				        alert.setTitle("ERROR");
+				        alert.setHeaderText("");
+				        alert.setContentText("데이터베이스에 토픽이 저장되지못했습니다.");
+				        alert.showAndWait();
+				        topicTextField.setText("");
+						controlTopicTextField.setText("");
+				        return;
+					}
 				}
+				Alert alert = new Alert(AlertType.INFORMATION);
+		        alert.setTitle("Insert Topic is Finished.");
+		        alert.setHeaderText("");
+		        alert.setContentText("데이터베이스에 토픽이 저장되었습니다.");
+		        alert.showAndWait();	
 			}
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle("Insert Topic is Finished.");
-	        alert.setHeaderText("");
-	        alert.setContentText("데이터베이스에 토픽이 저장되었습니다.");
-	        alert.showAndWait();
 		}
 		
 		dialogStage.close();

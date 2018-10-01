@@ -26,6 +26,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -60,6 +61,11 @@ public class LoadDialogController {
 		versionLabel.setText(version);
 		nameList = FXCollections.observableArrayList();
 		selectedList = FXCollections.observableArrayList();
+		
+		//addIV = new ImageView(new Image("file:resources/images/arr.png"));
+		//removeIV = new ImageView(new Image("file:resources/images/arr2.png"));
+		addIV.setImage(new Image("file:resources/images/arr.png"));
+		removeIV.setImage(new Image("file:resources/images/arr2.png"));
 		
 		if(main.isDbConnect) {
 			dashboardVector = main.connect.getDashboard(version);
@@ -124,9 +130,9 @@ public class LoadDialogController {
 	private void handleLoad() {
 		if(!main.isDbConnect) {
 			Alert alert = new Alert(AlertType.ERROR);
-	        alert.setTitle("Database isn't Connected.");
+	        alert.setTitle("Database not Connected.");
 	        alert.setHeaderText("");
-	        alert.setContentText("데이터베이스에 연결되어있지않습니다.");
+	        alert.setContentText("데이터베이스에 연결되어 있지 않습니다.");
 	        alert.showAndWait();
 	        return;
 
@@ -139,7 +145,7 @@ public class LoadDialogController {
 				if(name.equals(selectedList.get(j))) {
 					TextInputDialog dialog = new TextInputDialog("");
 					dialog.setTitle("File Name Dialog");
-					dialog.setHeaderText(name+"의 대시보드 이름을 고치시겠습니까? 아니면 Cancel을 누르세요");
+					dialog.setHeaderText(name+"의 대시보드파일 이름을 고치시겠습니까? 아니면 취소를 누르세요");
 					dialog.setContentText("New Dashboard Name:");
 
 					// Traditional way to get the response value.

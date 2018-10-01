@@ -21,34 +21,39 @@
 		<mkdir dir="externalLibs" />
 	
 		<copy todir="externalLibs">
-			<fileset dir="C:\workspace\project_workspace\DashboardEditor\lib">
+			<fileset dir="C:\Users\seoyul\git\Yellow-peach\DashboardEditor\lib">
 				<filename name="jfoenix-8.0.1.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
 			<fileset dir="C:\workspace\project_workspace\DashboardEditor\lib">
-				<filename name="org.eclipse.paho.client.mqttv3_fat.jar"/>
+				<filename name="jfoenix-8.0.1.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="C:\workspace\project_workspace\DashboardEditor\lib">
-				<filename name="base64-2.3.7.jar"/>
+			<fileset dir="C:\Users\seoyul\git\Yellow-peach\DashboardEditor\lib">
+				<filename name="mysql-connector-java-5.1.46-bin.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="C:\workspace\project_workspace\DashboardEditor\lib">
+			<fileset dir="C:\Users\seoyul\git\Yellow-peach\DashboardEditor\lib">
 				<filename name="json-simple-1.1.1.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="C:\workspace\project_workspace\DashboardEditor\lib">
-				<filename name="mysql-connector-java-5.1.46-bin.jar"/>
+			<fileset dir="C:\Users\seoyul\git\Yellow-peach\DashboardEditor\lib">
+				<filename name="base64-2.3.7.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\seoyul\git\Yellow-peach\DashboardEditor\lib">
+				<filename name="org.eclipse.paho.client.mqttv3_fat.jar"/>
 			</fileset>
 		</copy>
 	
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="C:\workspace\project_workspace\DashboardEditor">
+			<fileset dir="C:\Users\seoyul\git\Yellow-peach\DashboardEditor">
 				<include name="src/**" />
 			</fileset>
 		</copy>
@@ -121,7 +126,6 @@
 		<fx:application id="fxApplication"
 			name="DashboardEditor"
 			mainClass="application.Main"
-			version="1.0"
 		/>
 	
 		<mkdir dir="build/classes/META-INF" />

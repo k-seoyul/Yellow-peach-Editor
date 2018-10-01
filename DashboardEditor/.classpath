@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="C:/Users/seoyul/git/Yellow-peach/DashboardEditor/lib/jfoenix-8.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/seoyul/git/Yellow-peach/DashboardEditor/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/seoyul/git/Yellow-peach/DashboardEditor/lib/org.eclipse.paho.client.mqttv3_fat.jar"/>
+	<classpathentry kind="lib" path="C:/Users/seoyul/git/Yellow-peach/DashboardEditor/lib/mysql-connector-java-5.1.46-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
