@@ -166,8 +166,8 @@ public class DatabaseOptionDialogController {
 		}else {
 			if(topicList.size() > 0) {
 				for (int i = 0; i < topicList.size(); i++) {
-					if(controlTopicList.get(i).equals("null"))
-						controlTopicList.set(i, null);
+					//if(controlTopicList.get(i).equals("null"))
+						//controlTopicList.set(i, null);
 					if(!main.connect.insertTopic(topicList.get(i), controlTopicList.get(i))) {
 						Alert alert = new Alert(AlertType.ERROR);
 				        alert.setTitle("ERROR");
