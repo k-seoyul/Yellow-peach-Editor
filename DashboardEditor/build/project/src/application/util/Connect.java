@@ -91,7 +91,7 @@ public class Connect {
 			conn = pool.getConnection();
 			System.out.println("Database connection established");
 
-			String sql = "insert into topicList (topic, ctrTopic) values(?,?)";
+			String sql = "insert into topicList (topic, ctrtopic) values(?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, topic);
 			pstmt.setString(2, ctrTopic);

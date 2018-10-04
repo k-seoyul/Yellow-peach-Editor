@@ -8,6 +8,7 @@ import application.model.Chart;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -24,8 +25,15 @@ public class StreammingDialogController {
 	private Chart chart;
 	private boolean applyClicked = false;
 	
+	private TabPane tabPane = null;
+	private Tab tab = null;
+	
+	private String beforeUrl = null;
+	private String beforeTitle = null;
 	public void setMain(Main main) {
 		this.main = main;
+		tabPane = main.getBoardLayoutController().getTabPane();
+		tab = tabPane.getSelectionModel().getSelectedItem();
 	}
 	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
@@ -51,11 +59,14 @@ public class StreammingDialogController {
 				titleLabel.setText("Video Title");
 			}
 		}
-		
-		if(chart.getChartName() != "null")
+		beforeTitle = chart.getChartName();
+		beforeUrl = chart.getFirstTopic();
+		if(chart.getChartName() != "null") {
 			streammingTitle.setText(chart.getChartName());
-		if(chart.getFirstTopic() != "null")
+		}
+		if(chart.getFirstTopic() != "null") {
 			streammingUrl.setText(chart.getFirstTopic());
+		}
 		
 		streammingTitle.requestFocus();
 	}
@@ -73,7 +84,12 @@ public class StreammingDialogController {
 		if(inInputValid()) {
 			chart.setChartName(streammingTitle.getText());
 			chart.setFirstTopic(streammingUrl.getText());
-			chart.setFirstControl(main.connect.getUrlCtrTopic(streammingUrl.getText()));
+			if(main.isDbConnect)
+				chart.setFirstControl(main.connect.getUrlCtrTopic(streammingUrl.getText()));
+			if(!beforeTitle.equals(streammingTitle.getText()) || !beforeUrl.equals(streammingUrl.getText())) {
+				if(!tab.getText().contains("*"))
+	    			tab.setText("* "+tab.getText());
+			}
 			applyClicked = true;
 			dialogStage.close();
 		}

@@ -61,6 +61,7 @@ public class DatabaseOptionDialogController {
 			JSONObject jsonObject = (JSONObject) obj;
 			urlTextField.setText((String)jsonObject.get("url"));
 			userTextField.setText((String)jsonObject.get("user"));
+			passwordTextField.setText((String)jsonObject.get("pass"));
         } catch (Exception e) {
         	e.printStackTrace();
 		}
@@ -165,8 +166,8 @@ public class DatabaseOptionDialogController {
 		}else {
 			if(topicList.size() > 0) {
 				for (int i = 0; i < topicList.size(); i++) {
-					if(controlTopicList.get(i).equals("null"))
-						controlTopicList.set(i, null);
+					//if(controlTopicList.get(i).equals("null"))
+						//controlTopicList.set(i, null);
 					if(!main.connect.insertTopic(topicList.get(i), controlTopicList.get(i))) {
 						Alert alert = new Alert(AlertType.ERROR);
 				        alert.setTitle("ERROR");
